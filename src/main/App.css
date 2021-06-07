@@ -1,9 +1,9 @@
 :root {
     --bg-dark: #1A2F3A;
 
-    --logo-height: 100px;
+    --logo-height: 00px;
     --header-height: 100px;
-    --aside-width:225px;
+    --aside-width:300px;
 
     --shadow:
         0 2px 23px 0 rgba(0, 0, 0, 0.1)

@@ -3,7 +3,7 @@ aside.test {
     display: flex;
     justify-content:center;
     align-items: center;
-    margin-left: 0px;
+    
 
     height: 90vh;
     background: #000;
@@ -12,9 +12,11 @@ aside.test {
 aside .slider {
     height: 100% !important;
     width: 100% !important;
+    
 }
 
-aside .slider img {
-    width: 100% !important;
+aside .slider  div{
     height: 100% !important;
+    width: 100% !important;
+    
 }

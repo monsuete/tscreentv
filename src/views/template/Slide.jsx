@@ -1,24 +1,41 @@
-import './Slide.css'
+import "./Slide.css";
 
-import React from 'react'
+import React, { Component } from "react";
 
-import Slider from 'react-animated-slider';
-import 'react-animated-slider/build/horizontal.css';
-import content from './content';
+import Slider from "react-animated-slider";
+import "react-animated-slider/build/horizontal.css";
 
+import api from "../../services/api";
 
-export default props =>
+class Slide extends Component {
+  state = {
+    posts: [],
+  };
 
+  async componentDidMount() {
+    const response = await api.get("slides");
 
-    <aside className="test">
+    this.setState({ posts: response.data });
+  }
 
-        <Slider previousButton={<span/>} nextButton={<span/>} autoplay={1000}>
-            {content.map((item, index) => (
-                <div
-                    key={index}
-                    style={{ background: `url('${item.image}') no-repeat center center` }}>
-                        {item.image}
-                </div>
-            ))}
+  render() {
+    const { posts } = this.state;
+    return (
+      <aside className="test">
+        <Slider previousButton={<span />} nextButton={<span />} autoplay={1000}>
+          {posts.map((post, index) => (
+            <div
+              className="url"
+              key={index}
+              style={{
+                background: `url('${post.url}') no-repeat center center`,
+              }}
+            ></div>
+          ))}
         </Slider>
-    </aside>;
+      </aside>
+    );
+  }
+}
+
+export default Slide;
