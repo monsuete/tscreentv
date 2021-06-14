@@ -12,17 +12,24 @@ class Slide extends Component {
     posts: [],
   };
 
-  async componentDidMount() {
+  async fetchSlides() {
     const response = await api.get("slides");
-
     this.setState({ posts: response.data });
+
+    setTimeout(() => {
+      this.fetchSlides();
+    }, 1000 * 60 * 60);
+  }
+
+  async componentDidMount() {
+    this.fetchSlides();
   }
 
   render() {
     const { posts } = this.state;
     return (
       <aside className="test">
-        <Slider previousButton={<span />} nextButton={<span />} autoplay={1000}>
+        <Slider previousButton={<span />} nextButton={<span />} autoplay={2000}>
           {posts.map((post, index) => (
             <div
               className="url"

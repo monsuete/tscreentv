@@ -15,6 +15,7 @@
     "react-addons-css-transition-group": "^15.6.2",
     "react-addons-update": "^15.6.3",
     "react-animated-slider": "^2.0.0",
+    "react-calendar": "^3.4.0",
     "react-dom": "^16.13.1",
     "react-picky-date-time": "^1.6.1",
     "react-responsive-carousel": "^3.2.18",
